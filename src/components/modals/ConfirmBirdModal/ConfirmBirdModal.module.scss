@@ -1,0 +1,78 @@
+.confirmModal {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	inset: 0;
+	z-index: 100;
+	pointer-events: none;
+	transition: all 300ms ease;
+
+	&.modalActive {
+		background-color: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(10px);
+		pointer-events: all;
+	}
+
+	&.modalClose {
+		background-color: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(0px);
+		pointer-events: none;
+	}
+
+	.addBirdCard {
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+		width: 60%;
+		scale: 0;
+		opacity: 0;
+		transition: all 400ms ease;
+
+		&.active {
+			scale: 1;
+			opacity: 1;
+		}
+		&.close {
+			scale: 0;
+			opacity: 0;
+		}
+
+		.button {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			padding: 0px 10px;
+			height: 60px;
+			font-size: 28px;
+			scale: 0;
+			background: linear-gradient(360deg, #00a3ff 0%, #00d1ff 100%);
+			border-radius: 20px;
+			transition: scale 200ms linear;
+
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				border: 3px solid rgba(255, 255, 255, 0.35);
+				border-radius: 20px;
+				pointer-events: none;
+			}
+
+			&:active {
+				scale: 0.95;
+				background: linear-gradient(180deg, #29baf8 0%, #006dd1 100%);
+			}
+
+			&.openButton {
+				scale: 1;
+			}
+			&.scaleButton {
+				scale: 0;
+			}
+		}
+	}
+}

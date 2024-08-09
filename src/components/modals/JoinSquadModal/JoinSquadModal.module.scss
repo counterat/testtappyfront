@@ -1,0 +1,128 @@
+.container {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	inset: 0;
+	background: rgba(56, 48, 46, 0.6);
+	z-index: 99;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s linear;
+
+	&.isKeyboard {
+		align-items: flex-start;
+		padding-top: 40px;
+	}
+	&.isActive {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	&.isClose {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		background: linear-gradient(180deg, #c376ff 0%, #8308ff 100%);
+		border-radius: 20px;
+		padding: 20px 16px;
+		max-width: 319px;
+		width: 100%;
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border: 2px solid #cecece;
+			border-radius: 20px;
+			pointer-events: none;
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			gap: 21px;
+			.header {
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+				width: 100%;
+				align-items: center;
+				&ImageWrapper {
+					width: 60px;
+					height: 60px;
+					transform: rotate(-90deg);
+				}
+				&Title {
+					font-weight: 700;
+					font-size: 20px;
+					text-align: center;
+				}
+			}
+			.text {
+				font-family: 'Roboto';
+				font-size: 12px;
+				font-weight: 500;
+				line-height: 140%;
+				text-align: center;
+			}
+			.form {
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+				input {
+					background: rgba(255, 255, 255, 0.4);
+					border: 2px solid rgba(255, 255, 255, 0.5);
+					border-radius: 16px;
+					padding: 8px 16px;
+					width: 100%;
+					font-size: 14px;
+					font-weight: 500;
+					font-family: 'Roboto';
+					&::placeholder {
+						color: rgba(255, 255, 255, 0.5);
+					}
+				}
+				.errorText {
+					font-size: 10px;
+					font-weight: 500;
+					text-align: center;
+				}
+				&Submit {
+					position: relative;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					height: 40px;
+					background: linear-gradient(180deg, #5ecdff 0%, #0a89ff 100%);
+					border-radius: 50px;
+					font-size: 18px;
+					line-height: 110%;
+					letter-spacing: 0.02em;
+					text-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
+					transition: background 0.9s linear;
+
+					&:active {
+						background: linear-gradient(180deg, #29baf8 0%, #006dd1 100%);
+					}
+
+					&:disabled {
+						background: linear-gradient(180deg, #29baf8 0%, #006dd1 100%);
+					}
+
+					&::before {
+						content: '';
+						position: absolute;
+						inset: 0;
+						border: 2px solid rgba(255, 255, 255, 0.4);
+						border-radius: 50px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,60 @@
+.body {
+	.list {
+		display: flex;
+		flex-direction: column;
+		padding: 0 10px;
+
+		&Elem {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			padding: 20px 0;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+
+			@media (max-height: 695px) {
+				padding: 15px 0;
+			}
+
+			&Icon {
+				width: 50px;
+				height: 50px;
+			}
+
+			&Right {
+				display: flex;
+				flex-direction: column;
+				gap: 2px;
+				flex: 1;
+
+				&Title {
+					font-size: 25px;
+					line-height: 110%;
+					background: linear-gradient(180deg, #c4662a 0%, #672b05 100%);
+					background-clip: text;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					text-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25);
+
+					@media (max-width: 380px) {
+						font-size: 20px;
+					}
+				}
+
+				&Subtitle {
+					font-weight: 500;
+					font-size: 12px;
+					color: rgba(103, 43, 5, 0.51);
+					font-family: 'Roboto';
+				}
+			}
+		}
+
+		:last-child {
+			border-bottom: none;
+
+			li {
+				padding-bottom: 10px;
+			}
+		}
+	}
+}

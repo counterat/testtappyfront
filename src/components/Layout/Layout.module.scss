@@ -1,0 +1,53 @@
+.container {
+	position: relative;
+	background: #7ad6ff;
+	width: 100vw;
+	min-height: 100svh;
+	max-height: 100vh;
+	overflow: hidden;
+	.firstCloud {
+		position: absolute;
+		bottom: 13%;
+		right: -100px;
+		width: 377px;
+		height: 145px;
+		background: url('../../assets/images/Cloud.svg') no-repeat center/contain;
+		z-index: 1;
+	}
+	.secondCloud {
+		position: absolute;
+		bottom: 13%;
+		left: -50px;
+		width: 408px;
+		height: 155px;
+		background: url('../../assets/images/Cloud1.svg') no-repeat;
+		z-index: 1;
+	}
+	.thirdCloud {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		width: 225px;
+		height: 117px;
+		background: url('../../assets/images/Cloud2.svg') no-repeat;
+		z-index: 1;
+	}
+	.modalImage {
+		width: 86px;
+		height: 71px;
+	}
+
+	.modalImageFailed {
+		display: block;
+		margin-bottom: 4px;
+		width: 98px;
+		height: 106px;
+	}
+
+	.modalTitle {
+		font-family: var(--second-family);
+		font-weight: 600;
+		font-size: 18px;
+	}
+}

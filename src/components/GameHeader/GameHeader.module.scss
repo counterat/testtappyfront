@@ -1,0 +1,135 @@
+.header {
+	width: 100%;
+	margin-bottom: 35px;
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	z-index: 3;
+
+	&Balance {
+		position: relative;
+
+		&ImgWrapper {
+			display: flex;
+			gap: 10px;
+			position: absolute;
+			top: -6px;
+			left: -5px;
+			width: 66px;
+			height: 72px;
+			z-index: 1;
+		}
+
+		&Coin {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			width: 181px;
+			height: 39px;
+			margin-left: 15px;
+			padding: 0 20px;
+			border-radius: 20px;
+			background: linear-gradient(0deg, #974a19 0%, #bb7523 100%);
+			text-wrap: nowrap;
+			&.millionCoins {
+				width: 211px; // money > 1 000 000 && money < 100 000 000
+			}
+
+			&.milliardCoins {
+				width: 240px; // money > 1 000 000 000
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				border: 2px solid #c28c6a;
+				border-radius: 20px;
+				pointer-events: none;
+			}
+
+			&Text {
+				font-size: 26px;
+			}
+		}
+
+		&Tappy {
+			display: flex;
+			justify-content: end;
+			align-items: center;
+			width: 169px;
+			height: 20px;
+			margin-left: 15px;
+			background: #00a1fb;
+			border-radius: 45px;
+			gap: 8px;
+			font-size: 12px;
+			font-weight: 500;
+			font-family: 'Roboto';
+		}
+
+		&Button {
+			background: #ffffff;
+			border-radius: 100px;
+			color: #01b4ff;
+			width: 20px;
+			height: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: background 0.2s linear;
+
+			&:active {
+				background: linear-gradient(180deg, #ffe500 0%, #ff5c00 100%);
+				color: white;
+			}
+		}
+	}
+
+	&Right {
+		position: relative;
+		display: flex;
+		gap: 8px;
+
+		&Action {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 60px;
+			height: 60px;
+			padding: 5px 3px;
+			background: linear-gradient(180deg, #c5fc50 0%, #5ab103 100%);
+			border-radius: 12px;
+			overflow: hidden;
+			transition: scale 0.1s linear, background 0.2s linear;
+
+			&::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				border: 3px solid rgba(255, 255, 255, 0.62);
+				border-radius: 12px;
+				pointer-events: none;
+			}
+
+			&:active {
+				scale: 0.9;
+				background: linear-gradient(180deg, #a0da24 0%, #396f03 100%);
+			}
+
+			&.fortune {
+				position: absolute;
+				left: 0;
+				top: calc(100% + 8px);
+				background: linear-gradient(180deg, #508bfc 0%, #0038ff 100%);
+				z-index: 2;
+			}
+
+			&Img {
+				width: 44px;
+				height: 44px;
+			}
+		}
+	}
+}

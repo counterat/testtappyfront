@@ -1,0 +1,55 @@
+.squad {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 263px;
+	height: 39px;
+	margin-bottom: 12px;
+	background: linear-gradient(180deg, #4ac9ff 0%, #00a1fb 100%);
+	border-radius: 100px;
+	z-index: 10;
+	transition: scale 0.3s linear;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border: 2px solid rgba(255, 255, 255, 0.42);
+		border-radius: 100px;
+		pointer-events: none;
+	}
+
+	&:active {
+		scale: 1;
+		background: linear-gradient(180deg, #4ac9ff 0%, #00a1fb 100%);
+	}
+	&.isLinked {
+		max-width: 238px;
+		&:active {
+			scale: 0.95;
+			background: linear-gradient(180deg, #1db0ef 0%, #0171b0 100%);
+		}
+	}
+	&Txt {
+		font-size: 20px;
+	}
+
+	&IconWrapper {
+		position: absolute;
+		bottom: 6px;
+		left: 16px;
+		width: 40px;
+		height: 40px;
+	}
+
+	&IconWrapperRight {
+		position: absolute;
+		bottom: 6px;
+		right: 16px;
+		width: 40px;
+		height: 40px;
+		rotate: -80deg;
+	}
+}

@@ -1,0 +1,110 @@
+.wheel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+	width: 100%;
+	padding-top: 100px;
+	z-index: 2;
+
+	&Fortune {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		padding: 10px;
+		border-radius: 50%;
+		background: radial-gradient(
+			circle,
+			rgba(195, 118, 255, 1) 63%,
+			rgba(131, 8, 255, 1) 75%
+		);
+
+		&Head {
+			position: absolute;
+			top: -32%;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: -1;
+		}
+		&Arrow {
+			position: absolute;
+			top: 47%;
+			left: 50%;
+			width: 12%;
+			aspect-ratio: 1 / 1.47;
+			z-index: 11;
+			transform: translate(-49%, -50%);
+		}
+
+		&Circle {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 16%;
+			aspect-ratio: 1 / 1;
+			z-index: 10;
+			transform: translate(-50%, -50%);
+		}
+
+		&Image {
+			width: 100%;
+			aspect-ratio: 1 / 1;
+		}
+	}
+
+	&Button {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 30px;
+		height: 60px;
+		max-width: 270px;
+		width: 100%;
+		padding: 8px 10px;
+		border-radius: 18px;
+		background: linear-gradient(#c376ff 0%, #8308ff 100%);
+		transition: scale 0.1s linear;
+
+		&:disabled {
+			filter: brightness(0.8);
+
+			&:active {
+				scale: 1;
+			}
+		}
+
+		&:active {
+			scale: 0.95;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: 18px;
+			border: 2px solid rgba(255, 255, 255, 0.3);
+			pointer-events: none;
+		}
+
+		&Text {
+			font-size: 24px;
+		}
+
+		&Line {
+			height: 100%;
+			width: 1px;
+			background-color: rgba(255, 255, 255, 0.5);
+		}
+
+		&Ticket {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+
+			&Image {
+				width: 36px;
+			}
+		}
+	}
+}

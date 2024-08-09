@@ -1,0 +1,32 @@
+.button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 26px;
+	height: 26px;
+	border-radius: 75px;
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.41) 0%,
+		rgba(255, 255, 255, 0.25) 100%
+	);
+	transition: background 0.2s linear;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border: 1px solid rgba(255, 255, 255, 0.36);
+		border-radius: 75px;
+		pointer-events: none;
+	}
+
+	&:active {
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.24) 0%,
+			rgba(255, 255, 255, 0.12) 100%
+		);
+	}
+}
