@@ -60,7 +60,7 @@ function ShopBody() {
 		alert(JSON.stringify(result, null, 4));
 	  }, []);
 	
-	  const showAd = useAdsgram({ blockId: "1700", onReward, onError });
+	  const showAd = useAdsgram({ blockId: "1597", onReward, onError });
 	const ad_was_watched_handler = async () =>{
 		
 	
