@@ -27,6 +27,7 @@ class fetchUser {
 			}),
 		});
 
+
 		
 		if (!response.ok) {
 			throw new Error('Error: Authorization failed!');
