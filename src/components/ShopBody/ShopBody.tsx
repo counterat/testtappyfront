@@ -17,15 +17,18 @@ import {
 	changeIsModalInvite,
 	changeIsModalPaymentSuccess,
 } from 'store/reducers/modalsReducer';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import EggsEmptyModal from 'components/modals/EggsEmptyModal';
 import classNames from 'classnames';
-import { AdController } from 'index';
+
+import { ShowPromiseResult } from 'types/adsgram';
+import { useAdsgram } from 'hooks/useAdsGram';
 
 function ShopBody() {
 	const dispatch = useAppDispatch();
 	const { user } = useAppSelector((state) => state.user);
 	const [isEggsEmptyModal, setIsEggsEmptyModal] = useState(false);
+	
 	const buyShopItem = async (item_name: string, withCoin:boolean = false) => {
 		try {
 			const result = await FetchUser.buyShopItem(user.id, user.sign, item_name, withCoin);
@@ -47,16 +50,26 @@ function ShopBody() {
 			console.error('ad_was_watched request failed:', error);
 		}
 	};
-	const ad_was_watched_handler = async () =>{
-		AdController.show().then((result: any) => {
-			ad_was_watched().then(json=>{
-				dispatch(setTickets(json.tickets))
-			})
-		}).catch((result: any) => {
-			// user get error during playing ad or skip ad
-			// do nothing or whatever you want
-		})
 
+	const onReward = useCallback(() => {
+		ad_was_watched().then(json=>{
+			dispatch(setTickets(json.tickets))
+		})
+	  }, []);
+	  const onError = useCallback((result: ShowPromiseResult) => {
+		alert(JSON.stringify(result, null, 4));
+	  }, []);
+	
+	  const showAd = useAdsgram({ blockId: "1648", onReward, onError });
+	const ad_was_watched_handler = async () =>{
+		
+	
+		
+		  /**
+		   * insert your-block-id
+		   */
+		  
+ 
 		
 	}
 	
@@ -180,24 +193,13 @@ function ShopBody() {
 						)}
 						{elem.isForAd && (
 							<>
-								<button
-									type="button"
-									className={c.shopBodyCardActionsButton}
-									onClick={ad_was_watched_handler}
-								>
-									<p className={c.shopBodyCardActionsButtonTxt}>1 000 000</p>
-									<img
-										src="/assets/coin.png"
-										alt="coin"
-										className={c.shopBodyCardActionsButtonImg}
-									/>
-								</button>
+						
 								<button
 									className={classNames({
 										[c.shopBodyCardActionsButton]: true,
 										[c.invite]: elem.isFriend,
 									})}
-									onClick={ad_was_watched_handler}
+									onClick={showAd}
 								>
 									watch the ad
 								</button>

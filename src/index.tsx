@@ -6,9 +6,7 @@ const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
 );
 
-const AdController = (window as any).Adsgram.init({ blockId: "1648" });
 
-export {AdController}
 export const socket = new WebSocket('wss://testapi.tappybrd.com/ws');
 root.render(
 	
