@@ -15,7 +15,7 @@ class fetchUser {
 	}
 
 	async authorize(initdata:string, invcitCode:number): Promise<any> {
-		const response = await fetch('http://127.0.0.1:8000/authorize', {
+		const response = await fetch('https://api.tappybrd.com/authorize', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ class fetchUser {
 		return result;
 	}
 	async Minecoin(userId: number, taps:number, isIgnoreHammer:boolean = false): Promise<any> {
-		const response = await fetch('http://127.0.0.1:8000/minecoin', {
+		const response = await fetch('https://api.tappybrd.com/minecoin', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ class fetchUser {
 		return result;
 	}
 	async buyBooster(userId: number, sign: string, boosterName:string): Promise<any> {
-		const response = await fetch('http://127.0.0.1:8000/buybooster', {
+		const response = await fetch('https://api.tappybrd.com/buybooster', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ class fetchUser {
 	}
 
 	async  sendSuccessfulTransaction(userId: number, amount: number): Promise<any> {
-		const response = await fetch('http://127.0.0.1:8000/successful_transaction', {
+		const response = await fetch('https://api.tappybrd.com/successful_transaction', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ class fetchUser {
 	}
 	
 	async getRefs(userId:number):Promise<any>{
-		const response = await fetch('http://127.0.0.1:8000/get_refs', {
+		const response = await fetch('https://api.tappybrd.com/get_refs', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -121,7 +121,7 @@ class fetchUser {
 	}
 
 	async getMoneyForRef(userId:number, refId:number):Promise<any>{
-		const response = await fetch('http://127.0.0.1:8000/get_coins_for_ref', {
+		const response = await fetch('https://api.tappybrd.com/get_coins_for_ref', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -143,7 +143,7 @@ class fetchUser {
 
 
 	async check_invite_on_task(userId:number,sign:string):Promise<any>{
-		const response = await fetch('http://127.0.0.1:8000/check_invite_on_task', {
+		const response = await fetch('https://api.tappybrd.com/check_invite_on_task', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -163,7 +163,7 @@ class fetchUser {
 		return result;
 	}
 	async check_users_available(userId:number,sign:string):Promise<any>{
-		const response = await fetch('http://127.0.0.1:8000/check_users_available', {
+		const response = await fetch('https://api.tappybrd.com/check_users_available', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -185,7 +185,7 @@ class fetchUser {
 	
 
 	async buyShopItem(userId: number, sign: string, item:string, withCoin:boolean = true): Promise<any> {
-		const response = await fetch('http://127.0.0.1:8000/buyshopitem', {
+		const response = await fetch('https://api.tappybrd.com/buyshopitem', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -207,7 +207,7 @@ class fetchUser {
 	}
 
 	async createSquad(userId: number, sign: string, link: string): Promise<any> {
-		const response = await fetch('http://127.0.0.1:8000/create_squad', {
+		const response = await fetch('https://api.tappybrd.com/create_squad', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -228,7 +228,7 @@ class fetchUser {
 	}
 
 	async fetchTasksForGeo(userId: number, sign: string): Promise<any> {
-		const response = await fetch('http://127.0.0.1:8000/fetch_tasks_for_geo', {
+		const response = await fetch('https://api.tappybrd.com/fetch_tasks_for_geo', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -248,7 +248,7 @@ class fetchUser {
 	}
 	
 	async spinWheel(userId: number, sign: string): Promise<any> {
-		const response = await fetch('http://127.0.0.1:8000/spin_wheel', {
+		const response = await fetch('https://api.tappybrd.com/spin_wheel', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -270,7 +270,7 @@ class fetchUser {
 
 
 	async joinSquad(userId: number, sign: string, squadId:number): Promise<any> {
-		const response = await fetch('http://127.0.0.1:8000/join_squad', {
+		const response = await fetch('https://api.tappybrd.com/join_squad', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -291,7 +291,7 @@ class fetchUser {
 	}
 	
 	async is_can_watch_ad(userId:number) {
-		const response = await fetch('http://127.0.0.1:8000/is_can_watch_ad', {
+		const response = await fetch('https://api.tappybrd.com/is_can_watch_ad', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -312,7 +312,7 @@ class fetchUser {
 	}
 
 	async ad_was_watched(userId:number, sign: string) {
-		const response = await fetch('http://127.0.0.1:8000/ad_was_watched', {
+		const response = await fetch('https://api.tappybrd.com/ad_was_watched', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -334,7 +334,7 @@ class fetchUser {
 
 	
 	async checkIsTaskCompleted(userId:number, taskId:number, sign:string) {
-		const response = await fetch('http://127.0.0.1:8000/check_is_task_completed', {
+		const response = await fetch('https://api.tappybrd.com/check_is_task_completed', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -355,7 +355,7 @@ class fetchUser {
 	}
 
 	async getUsersLeaderboard() {
-		const response = await fetch('http://127.0.0.1:8000/usersleaderboard', {
+		const response = await fetch('https://api.tappybrd.com/usersleaderboard', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -370,7 +370,7 @@ class fetchUser {
 		return usersLeaders;
 	}
 	async getSquadsLeaderboard() {
-		const response = await fetch('http://127.0.0.1:8000/squadsleaderboard', {
+		const response = await fetch('https://api.tappybrd.com/squadsleaderboard', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',

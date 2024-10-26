@@ -7,7 +7,7 @@ const root = ReactDOM.createRoot(
 );
 
 
-export const socket = new WebSocket('ws://localhost:3000/ws');
+export const socket = new WebSocket('wss://api.tappybrd.com//ws');
 root.render(
 	
 		<App />
