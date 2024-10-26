@@ -1,0 +1,200 @@
+.container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 12px;
+	z-index: 2;
+
+	.squads {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 24px;
+		padding: 20px 16px 0px;
+		width: 100%;
+		height: 100vh;
+		border-radius: 20px 20px 0 0;
+		background: linear-gradient(0deg, #974a19 0%, #ffa843 100%);
+		border: 4px solid #f89d34;
+		border-bottom: 1px solid #f89d34;
+
+		&::-webkit-scrollbar {
+			width: 0px;
+		}
+
+		&Join {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: -16px;
+			background: linear-gradient(180deg, #ffc27a 0%, #cb7138 100%);
+			border-radius: 16px;
+			padding: 0px 16px;
+			width: 100%;
+			height: 50px;
+			font-size: 20px;
+			gap: 8px;
+			transition: scale 0.1s linear;
+			&:active {
+				scale: 0.95;
+			}
+			span {
+				display: block;
+				height: max-content;
+				font-size: 32px;
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				border: 2px solid rgba(255, 255, 255, 0.5);
+				border-radius: 16px;
+				pointer-events: none;
+			}
+		}
+		&Info {
+			display: flex;
+			width: 100%;
+			gap: 12px;
+			padding: 16px;
+			background: linear-gradient(90deg, #bc66ff 0%, #8308ff 100%) padding-box,
+				linear-gradient(
+						rgba(255, 255, 255, 0.6) 0%,
+						rgba(255, 255, 255, 0.2) 100%
+					)
+					border-box;
+			border: 2px solid transparent;
+			border-radius: 16px;
+			.image {
+				width: 50px;
+				height: 50px;
+			}
+			&Left {
+				flex: 1;
+				h4 {
+					font-size: 24px;
+					font-weight: 500;
+					font-family: 'Roboto';
+				}
+				&Coin {
+					display: flex;
+					gap: 8px;
+					font-size: 14px;
+					font-weight: 500;
+					font-family: 'Roboto';
+					span {
+						color: rgba(255, 255, 255, 0.6);
+					}
+				}
+			}
+			.place {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 50px;
+				height: 50px;
+				span {
+					font-size: 32px;
+					text-shadow: 0 2px 0 0 #45266d;
+				}
+			}
+		}
+		.noSquad {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: linear-gradient(#8d4f1e, #8d4f1e) padding-box,
+				linear-gradient(#ffc27a 0%, #cb7138 100%) border-box;
+			border: 2px solid transparent;
+			border-radius: 16px;
+			padding: 0px 16px;
+			width: 100%;
+			height: 84px;
+
+			span {
+				font-family: 'Roboto';
+				text-align: center;
+				font-weight: 500;
+				font-size: 16px;
+				color: rgba(255, 255, 255, 0.5);
+			}
+		}
+		.outerList {
+			width: 100%;
+			padding: 12px 12px 60px 12px;
+			background: linear-gradient(180deg, #ffbd93 0%, #a36c32 100%);
+			border-radius: 20px;
+			border: 2px solid #f8a673;
+			height: calc(100% - 39px - 24px - 50px - 8px - 84px - 24px);
+			.list {
+				height: 100%;
+				padding-right: 8px;
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+				overflow-y: scroll;
+				padding-bottom: 20px;
+
+				& > div:nth-child(1) {
+					background: linear-gradient(90deg, #ffd335 0%, #f90 100%);
+				}
+				& > div:nth-child(2) {
+					background: linear-gradient(90deg, #d0dce4 0%, #728999 100%);
+				}
+				& > div:nth-child(3) {
+					background: linear-gradient(90deg, #ff8c38 0%, #a04502 100%);
+				}
+			}
+			.list::-webkit-scrollbar {
+				width: 6px;
+
+				&:disabled {
+					width: 0px;
+				}
+			}
+			.list::-webkit-scrollbar-thumb {
+				width: 6px;
+				border-radius: 25px;
+				background: #fff;
+			}
+
+			.list::-webkit-scrollbar-track {
+				background: rgba(255, 255, 255, 0.32); /* Цвет трека (фон скроллбара) */
+				border-radius: 43px;
+			}
+		}
+	}
+	.modalBadge {
+		width: 97px;
+		height: 107px;
+	}
+	.modalSword {
+		width: 100px;
+		height: 100px;
+	}
+	.modalTitle {
+		font-size: 34px;
+		line-height: 110%;
+		letter-spacing: 0.02em;
+	}
+	.modalSquad {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		align-items: center;
+		span {
+			font-weight: 500;
+			font-size: 15px;
+			text-align: center;
+			font-family: var(--second-family);
+			color: rgba(255, 255, 255, 0.7);
+		}
+		&Name {
+			font-size: 20px !important;
+			color: #fff !important;
+		}
+	}
+}

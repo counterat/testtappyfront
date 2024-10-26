@@ -1,0 +1,22 @@
+.header {
+	display: flex;
+	gap: 16px;
+	width: 100%;
+	justify-content: center;
+	margin-top: 20px;
+	margin-bottom: 25px;
+
+	@media (max-height: 695px) {
+		margin-top: 10px;
+		margin-bottom: 8px;
+	}
+
+	&Link {
+		transition: opacity 0.5 linear;
+		opacity: 0.8;
+
+		&:active {
+			opacity: 0.9;
+		}
+	}
+}

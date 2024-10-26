@@ -1,0 +1,96 @@
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 24px;
+	background: url('../../../public/assets/welcomeBackground.png') no-repeat
+		center/cover;
+	width: 100vw;
+	min-height: 100svh;
+	max-height: 100vh;
+	padding: 0 20px;
+	padding-top: 60px;
+	z-index: 2;
+	@media (max-height: 695px) {
+		gap: 20px;
+	}
+
+	.wrapper {
+		position: relative;
+		background: linear-gradient(#ffe791 0%, #e5bd6f 48%, #a5531a 100%);
+		padding: 20px;
+		border-radius: 40px;
+		max-width: 600px;
+		width: 100%;
+
+		.logo {
+			position: absolute;
+			top: -20%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: auto;
+			height: auto;
+
+			@media (max-height: 695px) {
+				top: -18%;
+				width: 210px;
+				height: 120px;
+			}
+		}
+
+		.content {
+			background-color: #fed989;
+			border-radius: 20px;
+			width: 100%;
+			padding: 5px;
+		}
+	}
+
+	.button {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		width: 100%;
+		min-height: 60px;
+		max-height: 80px;
+		border-radius: 20px;
+		box-shadow: 0 7px 0 0 #8a4511;
+		border: 5px solid transparent;
+		background: linear-gradient(180deg, #ffe500 0%, #ff5c00 100%) padding-box,
+			linear-gradient(#ffa929 0%, #ffb800 100%) border-box;
+		transition: all 0.3s linear;
+		overflow: hidden;
+		max-width: 600px;
+		z-index: 5;
+
+		@media (max-height: 663px) {
+			height: 66px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(180deg, #ffb800 0%, #d85d04 100%);
+			opacity: 0;
+			transition: opacity 0.2s linear;
+			z-index: -5;
+		}
+
+		&:active::before {
+			opacity: 1;
+		}
+
+		&Text {
+			font-size: 44px;
+			text-shadow: 0 -2px 0 rgba(138, 69, 17, 0.6);
+		}
+	}
+}

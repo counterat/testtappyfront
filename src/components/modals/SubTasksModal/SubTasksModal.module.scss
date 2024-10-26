@@ -1,0 +1,114 @@
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	background: rgba(56, 48, 46, 0.6);
+	z-index: 80;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s linear;
+
+	&.isActive {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	&.isClose {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&Content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 24px;
+		padding: 20px 16px;
+		max-width: 319px;
+		width: 100%;
+		border: 2px solid #cecece;
+		border-radius: 20px;
+		background: linear-gradient(180deg, #5ecdff 0%, #0a89ff 100%);
+
+		&Title {
+			font-size: 34px;
+			line-height: 110%;
+			letter-spacing: 0.02em;
+		}
+
+		.list {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			width: 100%;
+
+			li {
+				width: 100%;
+			}
+
+			.button {
+				position: relative;
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				width: 100%;
+				height: 52px;
+				padding: 12px;
+				background: rgba(253, 254, 255, 0.12);
+				border: 2px solid rgba(255, 255, 255, 0.5);
+				border-radius: 16px;
+				overflow: hidden;
+				transition: background 0.1s linear;
+
+				&:active {
+					background: rgba(253, 254, 255, 0.2);
+				}
+
+				&.isDone {
+					background: rgba(9, 220, 55, 0.6);
+				}
+
+				img {
+					width: 28px;
+					height: 28px;
+					border-radius: 10px;
+				}
+
+				span {
+					flex: 1;
+					font-family: 'Roboto';
+					font-weight: 500;
+					font-size: 14px;
+					line-height: 120%;
+					letter-spacing: -0.01em;
+					text-align: start;
+				}
+			}
+		}
+
+		&Btn {
+			border-radius: 12px;
+			width: 100% !important;
+			height: 40px !important;
+			background: linear-gradient(
+				0deg,
+				rgba(0, 0, 0, 0.29) 0%,
+				rgba(0, 0, 0, 0.09) 100%
+			);
+			transition: scale 0.1s linear;
+			font-size: 20px !important;
+			span {
+				font-size: 20px !important;
+			}
+			&:active {
+				scale: 0.95;
+			}
+		}
+	}
+}

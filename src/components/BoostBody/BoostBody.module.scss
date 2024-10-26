@@ -1,0 +1,88 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+
+	&Card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding: 16px;
+		border-radius: 24px;
+		gap: 12px;
+		background: linear-gradient(0deg, #5ecdff 0%, #0a89ff 100%);
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border: 4px solid rgba(255, 255, 255, 0.35);
+			border-radius: 24px;
+			pointer-events: none;
+		}
+
+		&Content {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+
+			img {
+				width: 52px;
+				height: 50px;
+			}
+
+			&TextWrapper {
+				&Title {
+					font-weight: 400;
+					font-size: 34px;
+					letter-spacing: 0.02em;
+				}
+
+				&Subtitle {
+					font-family: 'Roboto';
+					font-weight: 500;
+					font-size: 14px;
+				}
+			}
+		}
+
+		&Actions {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			&Btn {
+				position: relative;
+				display: flex;
+				align-items: center;
+				gap: 2px;
+				height: 32px;
+				padding: 3px 14px;
+				background: linear-gradient(180deg, #9fea00 0%, #4f9b02 100%);
+				border-radius: 50px;
+				transition: background 0.2s linear, scale 0.1s linear;
+				&.isGrey {
+					background: linear-gradient(to bottom, #d3d3d3, #696969);
+				}
+				img {
+					width: 25px;
+					height: 25px;
+				}
+
+				&::before {
+					content: '';
+					position: absolute;
+					inset: 0;
+					border: 2px solid rgba(255, 255, 255, 0.4);
+					border-radius: 50px;
+					pointer-events: none;
+				}
+
+				&:active {
+					background: linear-gradient(180deg, #95d808 0%, #478c01 100%);
+					scale: 0.95;
+				}
+			}
+		}
+	}
+}

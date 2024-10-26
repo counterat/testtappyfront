@@ -1,0 +1,227 @@
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 0 28px;
+	background: rgba(56, 48, 46, 0.5);
+	z-index: 100;
+
+	&Content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+
+		border-radius: 20px;
+		padding: 16px;
+		max-width: 400px;
+		width: 100%;
+		background: linear-gradient(180deg, #ffbd93 0%, #a36c32 100%);
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: 20px;
+			border: 2px solid rgba(206, 206, 206, 0.28);
+			pointer-events: none;
+		}
+
+		&Head {
+			position: absolute;
+			top: -18%;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: -1;
+		}
+
+		&Sorry {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+
+			&Title {
+				font-size: 38px;
+				text-align: center;
+			}
+
+			&Subtitle {
+				font-family: var(--second-family);
+				font-weight: 600;
+				font-size: 18px;
+				text-align: center;
+			}
+		}
+
+		&Header {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 8px;
+
+			&TryAgain {
+				height: 50px;
+			}
+
+			&Super {
+				height: 59px;
+			}
+
+			&Congr {
+				height: 44px;
+			}
+
+			&Title {
+				font-family: var(--second-family);
+				font-weight: 500;
+				font-size: 18px;
+				text-align: center;
+			}
+		}
+
+		&Body {
+			display: flex;
+			justify-content: center;
+
+			&TryAgainImage {
+				width: 95px;
+				height: 95px;
+			}
+
+			&Card {
+				position: relative;
+				background: linear-gradient(180deg, #ffc85e 0%, #ff9d0a 100%);
+				border-radius: 24px;
+				overflow: hidden;
+				width: 154px;
+
+				&::before {
+					position: absolute;
+					content: '';
+					inset: 0;
+					border: 2px solid rgba(255, 255, 255, 0.35);
+					border-radius: 24px;
+					pointer-events: none;
+				}
+
+				&Image {
+					position: relative;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					padding: 10px 0;
+					background: linear-gradient(
+						180deg,
+						rgba(237, 184, 39, 0.79) 0%,
+						rgba(234, 130, 0, 0.79) 100%
+					);
+					border-radius: 24px;
+
+					img {
+						width: 100px;
+						height: 100px;
+						object-fit: contain;
+					}
+
+					&.tonImage {
+						padding: 35px;
+
+						img {
+							width: 73px;
+							height: 73px;
+						}
+					}
+
+					&.eggImage {
+						padding: 0;
+
+						img {
+							width: 100%;
+							height: 100%;
+						}
+					}
+				}
+
+				&Text {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: 4px;
+					padding: 12px;
+					font-size: 22px;
+					line-height: 90%;
+					text-align: center;
+					text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+
+					&Rang {
+						width: max-content;
+						height: 18px;
+						padding: 0 8px;
+						font-family: var(--second-family);
+						font-weight: 500;
+						font-size: 12px;
+						border-radius: 35px;
+						background: linear-gradient(180deg, #ffc93c 0%, #ff6b00 100%);
+					}
+				}
+
+				&.aqua {
+					background: linear-gradient(180deg, #5ecdff 0%, #0a89ff 100%);
+
+					.modalContentBodyCardImage {
+						background: rgba(255, 255, 255, 0.32);
+					}
+				}
+
+				&.legendary {
+					background: linear-gradient(180deg, #ffc700 0%, #ff007a 100%);
+
+					.modalContentBodyCardImage {
+						background: rgba(255, 255, 255, 0.32);
+					}
+				}
+
+				&.super__win {
+					background: linear-gradient(
+						180deg,
+						#2fb2ff 0%,
+						#ac7dff 52.64%,
+						#fc70d2 100%
+					);
+
+					.modalContentBodyCardImage {
+						background: transparent;
+						padding: 25px 0;
+					}
+				}
+
+				&Rays {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 130% !important;
+					height: 130% !important;
+					object-fit: cover !important;
+				}
+			}
+		}
+
+		&Button {
+			border-radius: 12px;
+			padding: 0 12px;
+			width: 100%;
+			height: 40px;
+			font-size: 20px;
+			background: linear-gradient(180deg, #ffc75a 0%, #fe7410 100%);
+			transition: scale 0.1s linear;
+
+			&:active {
+				scale: 0.95;
+			}
+		}
+	}
+}

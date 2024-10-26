@@ -1,0 +1,54 @@
+.button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	width: 116px;
+	height: 32px;
+	padding: 4px 16px;
+	border-radius: 50px;
+	background: linear-gradient(180deg, #9fea00 0%, #4f9b02 100%);
+	transition: all 0.1s linear;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		border-radius: 50px;
+		pointer-events: none;
+	}
+
+	&:active {
+		scale: 0.95;
+		background: linear-gradient(180deg, #77ba00 0%, #337800 100%);
+	}
+
+	&.check {
+		background: linear-gradient(180deg, #ffc27a 0%, #cb7138 100%);
+
+		&:active {
+			background: linear-gradient(180deg, #d39e60 0%, #a15a2d 100%);
+		}
+	}
+	&.checking {
+		background: linear-gradient(180deg, #d39e60 0%, #a15a2d 100%);
+
+		&:active {
+			scale: 1;
+		}
+	}
+
+	svg {
+		width: 16px;
+		height: 16px;
+	}
+
+	span {
+		font-size: 14px;
+		line-height: 110%;
+		letter-spacing: 0.02em;
+	}
+}

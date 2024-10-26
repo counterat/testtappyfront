@@ -1,0 +1,132 @@
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 28px;
+	background: rgba(56, 48, 46, 0.6);
+	z-index: 100;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s linear;
+
+	&.isActive {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	&.isClose {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&Container {
+		display: flex;
+		flex-direction: column;
+		gap: 11px;
+		max-width: 330px;
+		width: 100%;
+		background: linear-gradient(180deg, #00a0fa 0%, #1462d6 100%);
+		border: 4px solid #0959ba;
+		border-radius: 40px;
+		padding: 16px;
+
+		&Content {
+			position: relative;
+			padding: 16px;
+			padding-top: 90px;
+			background: linear-gradient(#c9efff 0%, #a3e4ff 100%) padding-box,
+				linear-gradient(#eefaff 0%, #cef1ff 100%) border-box;
+			border: 4px solid transparent;
+			border-radius: 24px;
+
+			&Logo {
+				position: absolute;
+				bottom: calc(100% + 16px);
+				left: 50%;
+				width: 100%;
+				padding: 0 45px;
+				transform: translateX(-50%);
+
+				@media (max-width: 380px) {
+					padding: 0 20px;
+				}
+
+				@media (max-width: 340px) {
+					padding: 0 10px;
+				}
+			}
+			&Days {
+				position: relative;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				row-gap: 12px;
+				column-gap: 9px;
+
+				.claimDay {
+					position: relative;
+					&::before {
+						content: '';
+						position: absolute;
+						inset: 0;
+						background-color: rgba(0, 0, 0, 0.58);
+						z-index: 5;
+						border-radius: 15px;
+					}
+
+					&Check {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						width: 50%;
+						height: 50%;
+						z-index: 6;
+						transform: translate(-50%, -50%);
+					}
+				}
+
+				&Day7 {
+					grid-column: span 3;
+
+					&.claimDay {
+						&::before {
+							border-radius: 20px;
+						}
+					}
+				}
+			}
+		}
+
+		&Button {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			padding: 0px 10px;
+			height: 60px;
+			font-size: 28px;
+			background: linear-gradient(360deg, #00a3ff 0%, #00d1ff 100%);
+			border-radius: 20px;
+			transition: scale 200ms linear;
+
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				border: 3px solid rgba(255, 255, 255, 0.35);
+				border-radius: 20px;
+				pointer-events: none;
+			}
+
+			&:active {
+				scale: 0.95;
+				background: linear-gradient(180deg, #29baf8 0%, #006dd1 100%);
+			}
+		}
+	}
+}

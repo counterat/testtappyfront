@@ -1,0 +1,86 @@
+.container {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	inset: 0;
+	background: rgba(56, 48, 46, 0.6);
+	z-index: 99;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s linear;
+	&.isActive {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	&.isClose {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		background: linear-gradient(180deg, #c376ff 0%, #8308ff 100%);
+		border-radius: 20px;
+		padding: 20px 16px;
+		max-width: 319px;
+		width: 100%;
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border: 2px solid #cecece;
+			border-radius: 20px;
+			pointer-events: none;
+		}
+		.closeButton {
+			align-self: flex-end;
+		}
+		.content {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			font-family: 'Roboto';
+			.header {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+				gap: 2px;
+				span {
+					font-size: 15px;
+					font-weight: 500;
+					color: rgba(255, 255, 255, 0.7);
+				}
+				h3 {
+					font-size: 32px;
+					font-weight: 700;
+				}
+			}
+			.body {
+				display: flex;
+				gap: 12px;
+				width: 100%;
+				&Column {
+					flex: 1;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: 2px;
+					span {
+						font-size: 15px;
+						font-weight: 500;
+						color: rgba(255, 255, 255, 0.7);
+					}
+					h4 {
+						font-size: 26px;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+}

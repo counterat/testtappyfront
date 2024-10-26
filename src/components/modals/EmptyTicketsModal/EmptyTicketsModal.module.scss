@@ -1,0 +1,109 @@
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 0 28px;
+	background: rgba(56, 48, 46, 0.5);
+	z-index: 100;
+
+	&Content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		border-radius: 20px;
+		padding: 20px 16px;
+		max-width: 400px;
+		width: 100%;
+		background: linear-gradient(180deg, #ffbd93 0%, #a36c32 100%);
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: 20px;
+			border: 2px solid rgba(206, 206, 206, 0.28);
+			pointer-events: none;
+		}
+
+		&Sorry {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+
+			&Title {
+				font-size: 38px;
+				text-align: center;
+			}
+
+			&Subtitle {
+				font-family: var(--second-family);
+				font-weight: 600;
+				font-size: 18px;
+				text-align: center;
+			}
+		}
+		&Actions {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			&Button {
+				position: relative;
+				width: 100%;
+				height: 52px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 0 12px;
+				gap: 8px;
+				border-radius: 16px;
+				font-size: 20px;
+				&::before {
+					position: absolute;
+					content: '';
+					inset: 0;
+					border: 2px solid rgba(255, 255, 255, 0.4);
+					border-radius: 16px;
+					pointer-events: none;
+				}
+				&:nth-child(1) {
+					background: linear-gradient(180deg, #9fea00 0%, #4f9b02 100%);
+				}
+				&:nth-child(2) {
+					background: linear-gradient(180deg, #5ecdff 0%, #0a89ff 100%);
+				}
+				&:nth-child(3) {
+					background: linear-gradient(180deg, #c376ff 0%, #8308ff 100%);
+					&::before {
+						border: 2px solid rgba(255, 255, 255, 0.5);
+					}
+					
+				}
+				img {
+					width: 29px;
+					height: 29px;
+				}
+			}
+		}
+
+		&Button {
+			
+			border-radius: 12px;
+			padding: 0 12px;
+			width: 100%;
+			height: 40px;
+			font-size: 20px;
+			background: linear-gradient(180deg, #ffc75a 0%, #fe7410 100%);
+			transition: scale 0.1s linear;
+
+			&:active {
+				scale: 0.95;
+			}
+		}
+	}
+}

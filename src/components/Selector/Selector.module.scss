@@ -1,0 +1,48 @@
+.wrapper {
+	$position: attr(var(data-position));
+
+	position: relative;
+	display: flex;
+	padding: 8px;
+	border-radius: 43px;
+	width: 100%;
+	background: #fbb98e;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border: 2px solid rgba(255, 255, 255, 0.35);
+		border-radius: 43px;
+		pointer-events: none;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 8px;
+		top: 8px;
+		width: calc(50% - 8px);
+		height: 38px;
+		border-radius: 50px;
+		background: linear-gradient(180deg, #5ecdff 0%, #0a89ff 100%);
+		z-index: 1;
+		transition: all 0.3s ease;
+	}
+
+	&[data-position='false'] {
+		&::after {
+			transform: translateX(100%);
+		}
+	}
+
+	.btn {
+		font-size: 18px;
+		width: 50%;
+		height: 38px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 2;
+	}
+}

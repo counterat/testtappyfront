@@ -1,0 +1,123 @@
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding: 0 12px;
+	justify-content: center;
+	align-items: flex-end;
+	background: rgba(56, 48, 46, 0.6);
+	z-index: 100;
+	pointer-events: none;
+	transition: opacity 0.3s linear;
+
+	&.isActive {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	&.isClose {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&Content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 24px;
+		padding: 20px 16px;
+		width: 100%;
+
+		border-radius: 20px 20px 0 0;
+		background: linear-gradient(#ffbd93 0%, #a36c32 100%);
+		transform: translateY(100%);
+		transition: all 0.3s linear;
+		&.isActive {
+			transform: translateY(0);
+		}
+		&.isClose {
+			transform: translateY(100%);
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border: 2px solid rgba(206, 206, 206, 0.28);
+			border-bottom: none;
+			border-radius: 20px 20px 0 0;
+			pointer-events: none;
+		}
+
+		&Header {
+			&Image {
+				display: block;
+				width: 105px;
+				height: 99px;
+				margin-bottom: -12px;
+			}
+		}
+		&Body {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			align-items: center;
+			&Title {
+				font-size: 36px;
+				line-height: 110%;
+				letter-spacing: 0.02em;
+			}
+			&Desc {
+				font-weight: 500;
+				font-size: 16px;
+				color: rgba(255, 255, 255, 0.8);
+				font-family: var(--second-family);
+			}
+			&Coin {
+				display: flex;
+				gap: 1px;
+				margin-top: 12px;
+				img {
+					width: 30px;
+					height: 30px;
+				}
+				span {
+					font-size: 26px;
+				}
+			}
+		}
+		.modalContentBtn {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			max-width: 287px;
+			width: 100%;
+			min-height: 60px;
+			font-weight: 400;
+			font-size: 28px;
+			line-height: 110%;
+			letter-spacing: 0.02em;
+			color: #fff;
+			border-radius: 20px;
+			background: linear-gradient(180deg, #4ac9ff 0%, #00a1fb 100%);
+			text-shadow: 0 1px 0 rgba(17, 87, 138, 0.6);
+			transition: background 0.2s linear;
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				border-radius: 20px;
+				border: 3px solid rgba(255, 255, 255, 0.35);
+				pointer-events: none;
+			}
+			&:active {
+				background: linear-gradient(180deg, #29baf8 0%, #006dd1 100%);
+			}
+		}
+	}
+}

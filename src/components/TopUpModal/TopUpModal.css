@@ -1,0 +1,78 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    color: #333; /* Темный цвет текста */
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #333; /* Темный цвет текста */
+  }
+  
+  .input-group {
+    margin: 15px 0;
+    text-align: left;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .input-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+  .connect-wallet-button, .close-button, .buy-button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  .connect-wallet-button {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .buy-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .close-button {
+    background-color: #6c757d;
+    color: white;
+  }
+  

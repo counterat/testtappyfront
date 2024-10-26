@@ -1,0 +1,19 @@
+.damage {
+	position: fixed;
+	font-size: 44px;
+	z-index: 1000;
+	transform: translate(0%, 0%);
+	pointer-events: none;
+	animation: damage 1s linear;
+}
+
+@keyframes damage {
+	0% {
+		transform: translate(0%, 0%);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(0px, -150px);
+		opacity: 0;
+	}
+}
